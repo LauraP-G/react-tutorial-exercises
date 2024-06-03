@@ -1,13 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "react"; // Main React.js library
+import ReactDOM from "react-dom"; // We use ReactDOM to render into the DOM
 
-const animals = ["Horse", "Turtle", "Elephant", "Monkey"];
+// Only update the value of this array
+const navlinkItems = [
+	<li className="nav-item">
+		<a className="nav-link" href="#">
+			Link to google.com
+		</a>
+	</li>,
+	<li className="nav-item">
+		<a className="nav-link" href="#">
+			Link to facebook.com
+		</a>
+	</li>,
+	<li className="nav-item">
+		<a className="nav-link" href="#">
+			Link to amazon.com
+		</a>
+	</li>,
+];
 
-/**
- * Change the content inside the map function
- **/
-const animalsInHTML = animals.map((singleAnimal, index) => {
-	return <li>hello</li>;
-});
+const content = <ul className="nav">{navlinkItems}</ul>;
 
-ReactDOM.render(<ul>{animalsInHTML}</ul>, document.querySelector("#myDiv"));
+ReactDOM.render(content, document.querySelector("#myDiv"));
